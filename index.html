@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Istrolid JS AI Docs</title>
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.css" />
+</head>
+
+<body>
+  <div class="markdown-body">
+    <h2 id="documentation">Documentation</h2>
+
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for functions..">
+
+    <ul id="Search">
+      <li>
+        <p><a href="#othersideside"><code>otherSide</code></a></p>
+      </li>
+
+      <li>
+        <p><a href="#commanderside"><code>commander.side</code></a></p>
+      </li>
+
+      <li>
+        <p><a href="#r26ai"><code>r26Ai</code></a></p>
+      </li>
+
+      <li>
+        <p><a href="#r26aienabled"><code>r26Ai.enabled</code></a></p>
+      </li>
+
+      <li>
+        <p><a href="#r26aiaddairuleinfo"><code>r26Ai.addAiRule</code></a></p>
+      </li>
+
+      <li>
+        <p><a href="#r26aiclearairule"><code>r26Ai.clearAiRule</code></a></p>
+      </li>
+
+      <li>
+        <p><a href="#build"><code>build</code></a></p>
+      </li>
+
+      <li>
+        <p><a href="#buildbuildunitamt-priority"><code>build.buildUnit</code></a></p>
+      </li>
+
+      <li>
+        <p><a href="#order"><code>order</code></a></p>
+      </li>
+
+      <li>
+        <p><a href="#ordermovedes"><code>order.move</code></a></p>
+      </li>
+
+      <li>
+        <p><a href="#orderfollowthing"><code>order.follow</code></a></p>
+      </li>
+
+      <li>
+        <p><a href="#orderstop"><code>order.stop</code></a></p>
+      </li>
+
+      <li>
+        <p><a href="#orderhold"><code>order.hold</code></a></p>
+      </li>
+
+      <li>
+        <p><a href="#orderunhold"><code>order.unhold</code></a></p>
+      </li>
+
+      <li>
+        <p><a href="#orderdestruct"><code>order.destruct</code></a></p>
+      </li>
+
+      <li>
+        <p><a href="#orderfindthingsrange-unit-pos"><code>order.findThings</code></a></p>
+      </li>
+
+      <li>
+        <p><a href="#ordergetunitordersunit"><code>order.getUnitOrders</code></a></p>
+      </li>
+
+      <li>
+        <p><a href="#condition"><code>condition</code></a></p>
+      </li>
+
+      <li>
+        <p><a href="#conditioninrangedpspos-side-dps"><code>condition.inRangeDps</code></a></p>
+      </li>
+
+      <li>
+        <p><a href="#conditioninrangeweaponpos-side-check"><code>condition.inRangeWeapon</code></a></p>
+      </li>
+
+      <li>
+        <p><a href="#conditionhasweaponunit-check"><code>condition.hasWeapon</code></a></p>
+      </li>
+
+      <li>
+        <p><a href="#conditionisbusyunit"><code>condition.isBusy</code></a></p>
+      </li>
+
+      <li>
+        <p><a href="#conditionismyunitunit"><code>condition.isMyUnit</code></a></p>
+      </li>
+
+      <li>
+        <p><a href="#conditionisenemysideunit"><code>condition.isEnemySide</code></a></p>
+      </li>
+
+      <li>
+        <p><a href="#movement"><code>movement</code></a></p>
+      </li>
+
+      <li>
+        <p><a href="#movementspreadtargets-findnew"><code>movement.spread</code></a></p>
+      </li>
+
+      <li>
+        <p><a href="#movementinrangepos-rad"><code>movement.inRange</code></a></p>
+      </li>
+
+      <li>
+        <p><a href="#movementfleerangepos-rad"><code>movement.fleeRange</code></a></p>
+      </li>
+
+      <li>
+        <p><a href="#movementavoidshotsdamage-check"><code>movement.avoidShots</code></a></p>
+      </li>
+    </ul>
+
+    <h4 id="othersideside"><code>otherSide(side)</code></h4>
+
+    <p>returns opposite side passed <code>side</code> (returns <code>"beta"</code> if passed <code>"alpha"</code>, and returns <code>"alpha"</code> if passed <code>"beta"</code>)</p>
+
+    <h4 id="commanderside"><code>commander.side</code></h4>
+
+    <p>variable for which side you are on in a game, defined to <code>"alpha"</code>, <code>"beta"</code>, <code>"spectators"</code>, or <code>"neutral"</code></p>
+
+    <h3 id="r26ai"><code>r26Ai</code></h3>
+
+    <p>Basic commands necessary to start work on AI</p>
+
+    <h4 id="r26aienabled"><code>r26Ai.enabled</code></h4>
+
+    <p>Set this equal to true at the end if you want to use the AI</p>
+
+    <h4 id="r26aiaddairuleinfo"><code>r26Ai.addAiRule(info)</code></h4>
+
+    <p>Adds an AI rule</p>
+
+    <p>Info is an object with 3 properties</p>
+
+    <ol>
+      <li>
+        <p><code>filter(unit)</code> Filter is a function that takes an argument unit. It should return true or false based on wheher you want to apply your rule to that unit</p>
+      </li>
+
+      <li>
+        <p><code>ai(unit)</code> AI is a function that contains the function <code>this.run()</code> Run is where you put your AI code</p>
+      </li>
+
+      <li>
+        <p><code>build(unit)</code> Build is where you put the code to spawn in units.</p>
+      </li>
+    </ol>
+
+    <h4 id="r26aiclearairule"><code>r26Ai.clearAiRule()</code></h4>
+
+    <p>Deletes all the AI rules</p>
+
+    <h3 id="build"><code>build</code></h3>
+
+    <p>These functions are used for fielding units</p>
+
+    <h4 id="buildbuildunitamtpriority"><code>build.buildUnit(amt, priority)</code></h4>
+
+    <p><code>amt</code> Number of units to field
+      <code>priority</code> At what priority to field them</p>
+
+    <h3 id="order"><code>order</code></h3>
+
+    <p>These functions execute orders</p>
+
+    <h4 id="ordermovedes"><code>order.move(des)</code></h4>
+
+    <p>Move a unit to <code>pos</code>, an array like: [x, y]</p>
+
+    <p>[0, 0] moves unit to the center of the screen</p>
+
+    <h4 id="orderfollowthing"><code>order.follow(thing)</code></h4>
+
+    <p>Makes a ship follow another <code>thing</code>. <code>thing</code> can be any object, a command point, a ship, a bullet, etc.</p>
+
+    <h4 id="orderstop"><code>order.stop()</code></h4>
+
+    <p>Makes a unit stop. Same as pressing X in game</p>
+
+    <h4 id="orderhold"><code>order.hold()</code></h4>
+
+    <p>Same as pressing Z, but won't unhold.</p>
+
+    <h4 id="orderunhold"><code>order.unhold()</code></h4>
+
+    <p>Opposite of <code>order.hold()</code>, It unholds but doesn't hold.</p>
+
+    <h4 id="orderdestruct"><code>order.destruct()</code></h4>
+
+    <p>Make a unit self destruct</p>
+
+    <h4 id="orderfindthingsrangeunitpos"><code>order.findThings(range, unit, pos)</code></h4>
+
+    <p><code>range</code> What range to get units in (pass -1 to check everywhere)
+      <code>unit</code> Function that returns true if you want to include the unit passed into it in the array
+      <code>pos</code> The function sorts the array by distance to this. The position of the unit commanding by default</p>
+
+    <h4 id="ordergetunitordersunit"><code>order.getUnitOrders(unit)</code></h4>
+
+    <p>Returns what order is being executed on the unit passed to <code>unit</code></p>
+
+    <h3 id="condition"><code>condition</code></h3>
+
+    <p>These functions check if things are true or false</p>
+
+    <h4 id="conditioninrangedpspossidedps"><code>condition.inRangeDps(pos, side, dps)</code></h4>
+
+    <p>Checks if a posistion, <code>pos</code> [x, y], is in a DPS zone of <code>dps</code> or higher</p>
+
+    <p><code>side</code> is whether its friendly or enemy dps. Either <code>"alpha"</code> or <code>"beta"</code></p>
+
+    <h4 id="conditioninrangeweaponpossidecheck"><code>condition.inRangeWeapon(pos, side, check)</code></h4>
+
+    <p><code>pos</code> Position to check (<code>[x, y]</code>)
+      <code>side</code> Which side has the weapon
+      <code>check</code> Function to return true if passed the weapon you want to check</p>
+
+    <h4 id="conditionhasweaponunitcheck"><code>condition.hasWeapon(unit, check)</code></h4>
+
+    <p><code>unit</code> Unit to check
+      <code>check</code> Function to return true if passed the weapon you want to check</p>
+
+    <h4 id="conditionisbusyunit"><code>condition.isBusy(unit)</code></h4>
+
+    <p>Checks whether unit <code>unit</code> is execution any orders</p>
+
+    <h4 id="conditionismyunitunit"><code>condition.isMyUnit(unit)</code></h4>
+
+    <p>Checks whether unit <code>unit</code> is owned by you</p>
+
+    <h4 id="conditionisenemysideunit"><code>condition.isEnemySide(unit)</code></h4>
+
+    <p>Checks whether a unit is owned by the enemy</p>
+
+    <h3 id="movement"><code>movement</code></h3>
+
+    <p>These function return <code>[x, y]</code> values to use in <code>order.move(pos)</code></p>
+
+    <h4 id="movementspreadtargetsfindnew"><code>movement.spread(targets, findNew)</code></h4>
+
+    <p>Returns a position from a list so that all units get different points.</p>
+
+    <p><code>targets</code> A list of targets to spread to
+      <code>findNew</code> Set this to true if you want to reassign a target every time the function is called</p>
+
+    <h4 id="movementinrangeposrad"><code>movement.inRange(pos, rad)</code></h4>
+
+    <p>Returns closest position within a circle to the unit</p>
+
+    <p><code>pos</code> Position of the circle <code>[x, y]</code>
+      <code>rad</code> Radius of the circle</p>
+
+    <h4 id="movementfleerangeposrad"><code>movement.fleeRange(pos, rad)</code></h4>
+
+    <p>Returns closest position outside a circle to the unit</p>
+
+    <p><code>pos</code> Position of the circle <code>[x, y]</code>
+      <code>rad</code> Radius of the circle</p>
+
+    <h4 id="movementavoidshotsdamagecheck"><code>movement.avoidShots(damage, check)</code></h4>
+
+    <p><code>damage</code> The damage value of the shot to avoid
+      <code>check</code> A function to check whether you want to avoid a shot</p>
+
+    <h3 id="unit"><code>unit</code></h3>
+
+    <p>The output of <code>order.findThings</code> &amp; the input to many functions like <code>order.getUnitOrders</code> &amp; <code>condition.isMyUnit</code></p>
+
+    <h4 id="types">types</h4>
+
+    <p>You can test what type of thing a unit is by if one of these properties is true.</p>
+
+    <p><code>unit.unit</code> If this is true, <code>unit</code> is a unit
+      <code>unit.spawn</code> If this is true, <code>unit</code> is a spawn point
+      <code>unit.commandPoint</code> If this is true, <code>unit</code> is a command point
+      <code>unit.static</code> If this is true, <code>unit</code> is a static thing, like a rock or piece of debris.
+      <code>unit.bullet</code> If this is true, <code>unit</code> is a bullet</p>
+  </div>
+  <script>
+    function myFunction() {
+      // Declare variables
+      var input, filter, ul, li, a, i;
+      input = document.getElementById('myInput');
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("Search");
+      li = ul.getElementsByTagName('li');
+
+      // Loop through all list items, and hide those who don't match the search query
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
