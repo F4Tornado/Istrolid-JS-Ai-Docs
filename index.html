@@ -45,7 +45,7 @@
       </li>
 
       <li>
-        <p><a href="#buildbuildunitamt-priority"><code>build.buildUnit</code></a></p>
+        <p><a href="#buildbuildunitamtpriority"><code>build.buildUnit</code></a></p>
       </li>
 
       <li>
@@ -77,7 +77,7 @@
       </li>
 
       <li>
-        <p><a href="#orderfindthingsrange-unit-pos"><code>order.findThings</code></a></p>
+        <p><a href="#orderfindthingsrangeunitpos"><code>order.findThings</code></a></p>
       </li>
 
       <li>
@@ -89,15 +89,15 @@
       </li>
 
       <li>
-        <p><a href="#conditioninrangedpspos-side-dps"><code>condition.inRangeDps</code></a></p>
+        <p><a href="#conditioninrangedpspossidedps"><code>condition.inRangeDps</code></a></p>
       </li>
 
       <li>
-        <p><a href="#conditioninrangeweaponpos-side-check"><code>condition.inRangeWeapon</code></a></p>
+        <p><a href="#conditioninrangeweaponpossidecheck"><code>condition.inRangeWeapon</code></a></p>
       </li>
 
       <li>
-        <p><a href="#conditionhasweaponunit-check"><code>condition.hasWeapon</code></a></p>
+        <p><a href="#conditionhasweaponunitcheck"><code>condition.hasWeapon</code></a></p>
       </li>
 
       <li>
@@ -117,19 +117,23 @@
       </li>
 
       <li>
-        <p><a href="#movementspreadtargets-findnew"><code>movement.spread</code></a></p>
+        <p><a href="#movementspreadtargetsfindnew"><code>movement.spread</code></a></p>
       </li>
 
       <li>
-        <p><a href="#movementinrangepos-rad"><code>movement.inRange</code></a></p>
+        <p><a href="#movementinrangeposrad"><code>movement.inRange</code></a></p>
       </li>
 
       <li>
-        <p><a href="#movementfleerangepos-rad"><code>movement.fleeRange</code></a></p>
+        <p><a href="#movementfleerangeposrad"><code>movement.fleeRange</code></a></p>
       </li>
 
       <li>
-        <p><a href="#movementavoidshotsdamage-check"><code>movement.avoidShots</code></a></p>
+        <p><a href="#movementavoidshotsdamagecheck"><code>movement.avoidShots</code></a></p>
+      </li>
+
+      <li>
+        <p><a href="#types"><code>Unit types</code></a></p>
       </li>
     </ul>
 
@@ -214,8 +218,8 @@
 
     <h4 id="orderfindthingsrangeunitpos"><code>order.findThings(range, unit, pos)</code></h4>
 
-    <p><code>range</code> What range to get units in (pass -1 to check everywhere)
-      <code>unit</code> Function that returns true if you want to include the unit passed into it in the array
+    <p><code>range</code> What range to get units in (pass -1 to check everywhere) <br>
+      <code>unit</code> Function that returns true if you want to include the unit passed into it in the array<br>
       <code>pos</code> The function sorts the array by distance to this. The position of the unit commanding by default</p>
 
     <h4 id="ordergetunitordersunit"><code>order.getUnitOrders(unit)</code></h4>
