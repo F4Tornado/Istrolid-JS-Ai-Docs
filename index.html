@@ -225,10 +225,11 @@
 
     <p>Make a unit self destruct</p>
 
-    <h4 id="orderfindthingsrangeunitpos"><code>order.findThings(range, unit, pos)</code></h4>
+    <h4 id="orderfindthingsrangeunitpos"><code>order.findThings(unit, range, pos)</code></h4>
 
-    <p><code>range</code> What range to get units in (pass -1 to check everywhere) <br>
+    <p>
       <code>unit</code> Function that returns true if you want to include the unit passed into it in the array<br>
+      <code>range</code> What range to get units in (pass -1 or leave empty to check everywhere) <br>
       <code>pos</code> The function sorts the array by distance to this. The position of the unit commanding by default</p>
 
     <h4 id="ordergetunitordersunit"><code>order.getUnitOrders(unit)</code></h4>
